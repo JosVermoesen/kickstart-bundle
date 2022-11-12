@@ -11,7 +11,7 @@ Generate the project with npm.
 Make directory and run `npm init` inside the project root, give it a name, accept most proposals, only where asking for test script, answer with `mocha`
 
 ```json
-"name": "blockchaincodecompiletestdeploy",
+"name": "kickstartbundle",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
