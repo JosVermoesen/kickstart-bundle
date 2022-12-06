@@ -1,4 +1,4 @@
-# Blockchain CodeCompileTestDeploy
+# KickstartBundle
 
 ## Development Tools used for this app
 
