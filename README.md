@@ -23,12 +23,12 @@ Make directory and run `npm init` inside the project root, give it a name, accep
 ## NPM packages used for this project
 
 All in one command:
-`npm i ganache-cli mocha solc@0.4.26 fs-extra web3 @truffle/hdwallet-provider`
+`npm i ganache mocha solc@0.4.26 fs-extra web3 @truffle/hdwallet-provider`
 
 - [web3](https://github.com/ChainSafe/web3.js#readme)
 - [solc](https://github.com/ethereum/solc-js#readme)
 - [mocha](https://mochajs.org/)
-- [ganache-cli](https://github.com/trufflesuite/ganache#readme)
+- [ganache](https://github.com/trufflesuite/ganache/tree/develop/packages/ganache#readme)
 - [fs-extra](https://github.com/jprichardson/node-fs-extra)
 - [hdwallet-provider](https://github.com/trufflesuite/truffle/tree/master/packages/hdwallet-provider#readme)
 
@@ -37,22 +37,36 @@ All in one command:
 - Move into directory
 - `node compile.js`
 
+IMPORTANT: Before testing you should precompile bc-campaign
+
+## Compiling 2
+
+- Move into directory
+- `node compile4JSON.js`
+
 ## Testing
 
-- Be sure to be in main directory
 - Be sure using mocha for test scripts in package.json file.
+- Be sure to be in main directory
+- Be sure you have compiled bc-campaign first
 - `npm run test`
+
+This will test 'all' tests in the test folder
 
 ## Görli
 
-https://faucets.chain.link/goerli
+<https://goerli.etherscan.io/>
 
-https://goerli.etherscan.io/
+## Sepolia
+
+<https://sepolia.etherscan.io/>
+
+<https://faucets.chain.link/goerli>
 
 ## Infura API
 
 Getting access to the API network
-https://infura.io
+<https://infura.io>
 
 ## Your secrets for deploy.js
 
@@ -68,8 +82,15 @@ module.exports = { metamask, görli };
 
 ## Varia
 
-https://andersbrownworth.com/blockchain/hash
+<https://andersbrownworth.com/blockchain/hash>
 
-https://eth-converter.com/
+<https://eth-converter.com/>
 
-https://iancoleman.io/bip39/
+<https://iancoleman.io/bip39/>
+
+Get free Test Ether (every next 24 hours!)
+<https://cloud.google.com/application/web3/faucet/ethereum/sepolia>
+
+<https://infura.io/register>
+
+<https://sepolia.etherscan.io>
