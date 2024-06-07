@@ -53,15 +53,15 @@ IMPORTANT: Before testing you should precompile bc-campaign
 
 This will test 'all' tests in the test folder
 
-## Görli
+## Görli (discontinued)
 
 <https://goerli.etherscan.io/>
 
-## Sepolia
+## Sepolia (from 2024)
 
 <https://sepolia.etherscan.io/>
 
-<https://faucets.chain.link/goerli>
+<https://faucets.chain.link/sepolia>
 
 ## Infura API
 
