@@ -32,6 +32,8 @@ All in one command:
 - [fs-extra](https://github.com/jprichardson/node-fs-extra)
 - [hdwallet-provider](https://github.com/trufflesuite/truffle/tree/master/packages/hdwallet-provider#readme)
 
+https://docs.web3js.org/
+
 ## Compiling
 
 - Move into directory
