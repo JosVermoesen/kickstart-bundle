@@ -1,4 +1,4 @@
-# KickstartBundle
+# Kickstart Bundle
 
 ## Development Tools used for this app
 
@@ -53,10 +53,6 @@ IMPORTANT: Before testing you should precompile bc-campaign
 
 This will test 'all' tests in the test folder
 
-## Görli (discontinued)
-
-<https://goerli.etherscan.io/>
-
 ## Sepolia (from 2024)
 
 <https://sepolia.etherscan.io/>
@@ -75,9 +71,9 @@ Add your personal secrets key and account to secrets.js
 ```js
 const metamask = "put here the string with your 12 secrets words";
 
-const görli = "your goerli.infura.io https string";
+const sepolia = "your goerli.infura.io https string";
 
-module.exports = { metamask, görli };
+module.exports = { metamask, sepolia };
 ```
 
 ## Varia

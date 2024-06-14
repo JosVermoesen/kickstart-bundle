@@ -3,7 +3,7 @@ const { Web3 } = require("web3");
 const { interface, bytecode } = require("./compile");
 
 const secrets = require("./../secrets/secrets");
-const provider = new HDWalletProvider(secrets.metamask, secrets.görli);
+const provider = new HDWalletProvider(secrets.metamask, secrets.sepolia);
 
 const web3 = new Web3(provider);
 
