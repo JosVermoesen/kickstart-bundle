@@ -1,8 +1,8 @@
 const metamask = "put here the string with your 12 secrets words";
 
-const görli = "your sepolia.infura.io https string";
+const sepolia = "your sepolia.infura.io https string";
 
-module.exports = { metamask, görli };
+module.exports = { metamask, sepolia };
 
 // const rinkeby = 'your rinkeby.infura.io https string';
 // 2022: rinkeby is deprecated since autumn, use görli instead!

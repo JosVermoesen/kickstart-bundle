@@ -23,5 +23,4 @@ const deploy = async () => {
 deploy();
 
 // Contract deployed to:
-// Sepolia from 2024
-// Contract deployed to 0x3bf420dFb1b6E50d17aA7EdFBFe413e6f3695aD1
+// 0xAd511E843EeEee5538be46C0a723b86fF4235df8 09/06/2024
