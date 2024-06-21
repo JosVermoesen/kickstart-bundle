@@ -7,7 +7,6 @@ const { interface, bytecode } = require("../bc-lottery/compile");
 
 let accounts;
 let lottery;
-let thisMoment = "1718643823975";
 
 beforeEach(async () => {
   // Get a list of all accounts
@@ -30,7 +29,7 @@ describe("Lottery", () => {
   });
 
   it("allows one account to enter", async () => {
-    await lottery.methods.enter(thisMoment).send({
+    await lottery.methods.enter().send({
       from: accounts[0],
       value: web3.utils.toWei("0.011", "ether"),
       gas: "1000000",
@@ -45,19 +44,19 @@ describe("Lottery", () => {
   });
 
   it("allows multiple accounts to enter", async () => {
-    await lottery.methods.enter(thisMoment).send({
+    await lottery.methods.enter().send({
       from: accounts[0],
       value: web3.utils.toWei("0.011", "ether"),
       gas: "1000000",
     });
 
-    await lottery.methods.enter(thisMoment).send({
+    await lottery.methods.enter().send({
       from: accounts[1],
       value: web3.utils.toWei("0.011", "ether"),
       gas: "1000000",
     });
 
-    await lottery.methods.enter(thisMoment).send({
+    await lottery.methods.enter().send({
       from: accounts[2],
       value: web3.utils.toWei("0.011", "ether"),
       gas: "1000000",
@@ -75,7 +74,7 @@ describe("Lottery", () => {
 
   it("requires a minimum amount of ether to enter", async () => {
     try {
-      await lottery.methods.enter(thisMoment).send({
+      await lottery.methods.enter().send({
         from: accounts[0],
         value: 0,
       });
@@ -87,7 +86,7 @@ describe("Lottery", () => {
 
   it("only manager can call pickWinner", async () => {
     try {
-      await lottery.methods.pickWinner(thisMoment).send({
+      await lottery.methods.pickWinner().send({
         from: accounts[1],
       });
       assert(false);
@@ -97,14 +96,14 @@ describe("Lottery", () => {
   });
 
   it("sends money to the winner and resets the players array", async () => {
-    await lottery.methods.enter(thisMoment).send({
+    await lottery.methods.enter().send({
       from: accounts[0],
       value: web3.utils.toWei("2", "ether"),
       gas: "1000000",
     });
 
     const initialBalance = await web3.eth.getBalance(accounts[0]);
-    await lottery.methods.pickWinner(thisMoment).send({
+    await lottery.methods.pickWinner().send({
       from: accounts[0],
       gas: "1000000",
     });

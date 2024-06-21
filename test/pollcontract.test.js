@@ -43,7 +43,7 @@ describe("PollContract", () => {
 
     let createdPoll = await pollContract.methods.getPoll(0).call({
       from: accounts[1],
-    });    
+    });
     assert.equal(createdPoll[1], "Do you like dogs or cats?");
     // console.log("createdPoll:", "\n", createdPoll, "\n");
 
@@ -64,7 +64,7 @@ describe("PollContract", () => {
     });
     assert.equal(createdPoll[1], "Preferred breakfast?");
     // console.log("createdPoll:", "\n", createdPoll, "\n");
-    
+
     let voteResult = await pollContract.methods
       .vote(0, 2)
       .send({ from: accounts[1], gas: "1000000" });

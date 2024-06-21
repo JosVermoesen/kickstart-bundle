@@ -12,7 +12,7 @@ contract Lottery {
         address addressId;
         uint256 weiSent;
         uint256 seriesId;
-        string onDateTime;
+        uint256 timestamp;
     }
     PlayerHistory[] public playersHistory;
 
@@ -20,7 +20,7 @@ contract Lottery {
         uint256 id;
         address addressId;
         uint256 weiReceived;
-        string onDateTime;
+        uint256 timestamp;
     }
     WinnerHistory[] public winnersHistory;
 
@@ -36,7 +36,7 @@ contract Lottery {
     }
 
     // In Remix use Gwei 11.000.000 for sending 0.011 ether
-    function enter(string dateNow) public payable {
+    function enter() public payable {
         require(msg.value > .01 ether);
         // 0.8.14 change below to: players.push(payable(msg.sender));
         players.push(msg.sender);
@@ -48,7 +48,7 @@ contract Lottery {
             addressId: msg.sender,
             weiSent: msg.value,
             seriesId: winnersHistory.length + 1,
-            onDateTime: dateNow
+            timestamp: block.timestamp
         });
         playersHistory.push(newDetail);
         emit Enter();
@@ -63,7 +63,7 @@ contract Lottery {
             );
     }
 
-    function pickWinner(string dateNow) public restricted {
+    function pickWinner() public restricted {
         uint256 index = random() % players.length;
         uint256 thisBalance = address(this).balance;
         players[index].transfer(address(this).balance);
@@ -76,7 +76,7 @@ contract Lottery {
             id: winnerId,
             addressId: players[index],
             weiReceived: thisBalance,
-            onDateTime: dateNow
+            timestamp: block.timestamp
         });
         winnersHistory.push(newDetail);
 
@@ -112,24 +112,24 @@ contract Lottery {
 
     function getPlayerDetails(
         uint256 _id
-    ) external view returns (uint256, address, uint256, uint256, string) {
+    ) external view returns (uint256, address, uint256, uint256, uint256) {
         return (
             playersHistory[_id].id,
             playersHistory[_id].addressId,
             playersHistory[_id].weiSent,
             playersHistory[_id].seriesId,
-            playersHistory[_id].onDateTime
+            playersHistory[_id].timestamp
         );
     }
 
     function getWinnerDetails(
         uint256 _id
-    ) external view returns (uint256, address, uint256, string) {
+    ) external view returns (uint256, address, uint256, uint256) {
         return (
             winnersHistory[_id].id,
             winnersHistory[_id].addressId,
             winnersHistory[_id].weiReceived,
-            winnersHistory[_id].onDateTime
+            winnersHistory[_id].timestamp
         );
     }
 }
